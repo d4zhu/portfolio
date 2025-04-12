@@ -84,6 +84,7 @@ button {
   border: 1px solid #333;
   border-radius: 4px;
   cursor: pointer;
+  grid-column: 1 / span 2;
 }
 
 /* Highlight the 'current' nav link with a bold border/font */
