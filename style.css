@@ -1,6 +1,156 @@
+:root {
+  --color-accent: oklch(65% 50% 0);
+}
+
+html {
+  accent-color: var(--color-accent);
+}
+
 body {
-    /* Set line height to 1.5 times the font size
-         and use the OS’s UI font as the website font
-       */
-    font: 100%/1.5 system-ui;
-  }
+  font: 100%/1.5 system-ui;
+  max-width: 100ch;
+  margin-inline: max(2em, (100% - 100ch) / 2);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: 4em;
+}
+
+/* Nav bar remains as Flexbox */
+nav {
+  display: flex;
+  margin-bottom: 3cqmax;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: oklch(80% 3% 200);
+}
+
+nav a {
+  flex: 1;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  padding: 0.5em;
+}
+
+nav a:hover {
+  border-bottom: 2px solid var(--color-accent);
+  background-color: oklch(from var(--color-accent) 95% 5% h);
+}
+
+form {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem; /* spacing between rows/columns */
+}
+
+/* Labels, buttons, inputs, etc. all share site font */
+label,
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Keep each grid item in its own cell */
+button,
+input,
+textarea,
+select {
+  /* Let them expand to fill the second column (for inputs) */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Basic styling for text fields */
+input,
+textarea,
+select {
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Button styling */
+button {
+  margin-block: 1em;
+  padding: 0.6em 1em;
+  border: 1px solid #333;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Highlight the 'current' nav link with a bold border/font */
+.current {
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: oklch(80% 3% 200);
+  font-weight: bold;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  grid-template-rows: auto auto auto;
+  gap: 1em;
+}
+
+.projects > article {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+  gap: 1em;
+  margin: 0;
+  font-size: 0.5em;
+}
+
+.projects > article > h2 {
+  margin: 0;
+}
+
+.resume {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(15em, 1fr));
+  gap: 1em;
+  /* Center this element (needs a fixed or max width) */
+  max-width: 800px;
+  margin: 0 auto;
+
+  /* Ensure text is left-aligned inside */
+  text-align: left;
+}
+
+.resume > article > h2 {
+  margin: 0;
+  font-size: 2em;
+}
+
+.home {
+  /* Center the entire block (optional) */
+  text-align: center;
+  /* A little top/bottom margin */
+  margin: 2rem auto;
+  /* If you want to limit maximum width for the content (optional) */
+  max-width: 50rem;
+}
+
+.home img {
+  /* Make the image responsive */
+  display: block;
+  max-width: 100%; /* never exceed its container’s width */
+  height: auto;    /* maintain aspect ratio */
+  margin: 0 auto;  /* center in the container if smaller than max-width */
+}
+
+.home p {
+  /* Optionally set text styling to read nicely under the image */
+  margin-top: 1rem;
+  line-height: 1.5;
+  font-size: 1.5em;
+}
