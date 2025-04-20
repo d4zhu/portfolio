@@ -16,7 +16,7 @@ console.log('IT’S ALIVE!');
 // }
 
 let pages = [
-  { url: '/portfolio/index.html', title: 'Home' },
+  { url: '/portfolio/', title: 'Home' },
   { url: '/portfolio/projects/', title: 'Projects' },
   { url: '/portfolio/contact/', title: 'Contact' },
   { url: '/portfolio/resume/', title: 'Resume' },
@@ -33,15 +33,8 @@ for (let p of pages) {
   a.href = url;
   a.textContent = title;
 
-  let isHomePage =
-    (location.pathname === "/portfolio/" && a.pathname === "/portfolio/index.html") ||
-    (location.pathname === "/portfolio/index.html" && a.pathname === "/portfolio/");
-
-  if (
-    (a.host === location.host && a.pathname === location.pathname) ||
-    isHomePage
-  ) {
-    a.classList.add("current");
+  if (a.host === location.host && a.pathname === location.pathname) {
+    a.classList.add('current');
   }
 
   if (a.host !== location.host) {
