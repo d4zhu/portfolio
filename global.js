@@ -33,10 +33,16 @@ for (let p of pages) {
   a.href = url;
   a.textContent = title;
 
-  if (a.host === location.host && a.pathname === location.pathname) {
-    a.classList.add('current');
-  }
+  let isHomePage =
+    (location.pathname === "/portfolio/" && a.pathname === "/portfolio/index.html") ||
+    (location.pathname === "/portfolio/index.html" && a.pathname === "/portfolio/");
 
+  if (
+    (a.host === location.host && a.pathname === location.pathname) ||
+    isHomePage
+  ) {
+    a.classList.add("current");
+  }
   if (a.host !== location.host) {
     a.setAttribute('target', '_blank');
   }
