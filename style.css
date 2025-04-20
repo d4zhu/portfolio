@@ -1,4 +1,5 @@
 :root {
+  color-scheme: light dark;
   --color-accent: oklch(65% 50% 0);
 }
 
@@ -21,13 +22,14 @@ h1 {
   font-size: 4em;
 }
 
-/* Nav bar remains as Flexbox */
 nav {
+  --border-color: oklch(50% 10% 200 / 40%);
+  --hover-color: oklch(75% 0.1 230 / 50%);
   display: flex;
   margin-bottom: 3cqmax;
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  border-bottom-color: oklch(80% 3% 200);
+  border-bottom-color: var(--border-color);
 }
 
 nav a {
@@ -39,8 +41,19 @@ nav a {
 }
 
 nav a:hover {
-  border-bottom: 2px solid var(--color-accent);
-  background-color: oklch(from var(--color-accent) 95% 5% h);
+  border-bottom: 2px solid var(--border-color);
+  background-color: color-mix(in oklch, var(--hover-color), canvas 50%);
+}
+
+.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 70%;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 form {
@@ -91,7 +104,7 @@ button {
 .current {
   border-bottom-width: 2px;
   border-bottom-style: solid;
-  border-bottom-color: oklch(80% 3% 200);
+  border-bottom-color: var(--border-color);
   font-weight: bold;
 }
 
