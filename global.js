@@ -77,6 +77,8 @@ if ("colorScheme" in localStorage) {
 
 select.addEventListener('input', function (event) {
   const value = event.target.value;
+  console.log("Saving to localStorage:", value);
   localStorage.colorScheme = value;
   setColorScheme(value);
+  console.log('color scheme changed to', value);
 });
