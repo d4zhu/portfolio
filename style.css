@@ -11,6 +11,7 @@ body {
   font: 100%/1.5 system-ui;
   max-width: 100ch;
   margin-inline: max(2em, (100% - 100ch) / 2);
+  padding-top: 2rem; /* make space for the switcher */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -49,7 +50,7 @@ nav a:hover {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  font-size: 70%;
+  font-size: 50%;
   font-family: inherit;
   display: flex;
   align-items: center;
