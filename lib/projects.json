@@ -1,0 +1,74 @@
+[
+    {
+        "title": "Flight Fare Forecasting",
+        "year": 2024,
+        "image": "../images/airplane.jpg",
+        "description": "Are we able to accurately predict flight costs based on the route, distance, and seasonality? To carry this out, a Random Forest Regressor was employed that ultimately achieved a R-squared of 0.93 and a ~5.1% mean absolute pecentage error."
+    },
+    {
+        "title": "Textual Sentiment and Recipe Ratings",
+        "year": 2024,
+        "image": "../images/recipe.jpg",
+        "description": "Can sentiment analysis of recipe descriptions and reviews help us accurately predict recipe ratings? Using a Random Forest Classifier, a ~72% accuracy was achieved and while this is not extraordinary, there is certainly a significant influence of textual features. "
+    },
+    {
+        "title": "Image Processor",
+        "year": 2023,
+        "image": "../images/photo_edit.jpg",
+        "description": "This project focused on constructing a simulated photo editting application using Python. Features such as birghtness adjustment, blurring, blending, and edge highlighting were implemented. Also developed a feature that classifies an image as day or night with a KNN Classifier. "
+    },
+    {
+        "title": "Kaggle Data Mining Competition",
+        "year": 2025,
+        "image": "../images/airbnb.jpg",
+        "description": "Placed top 25 out of 100+ participants in a Kaggle competition where the objective was to build the best machine learning model to predict AirBnb listing prices."
+    },
+    {
+        "title": "Regression Analysis on News Popularity",
+        "year": 2024,
+        "image": "../images/news.jpg",
+        "description": "Using a dataset with a heterogeneous set of features about articles published by Mashable in a span of two years, this project found 13 of the most predictive variabltes of new shares (popularity)."
+    },
+    {
+        "title": "LinkedIn Salary Prediction",
+        "year": 2025,
+        "image": "../images/LinkedIn.jpg",
+        "description": "Are we able to accurately predict the salary of a certain job listing given its listing details? After intensive data-preprocessing, a Random Forest Regressor was employed that achieved an R-squared of 0.83 and a mean absolute error of ~$6028.89."
+    },
+    {
+        "title": "Personalized Genetic Report for Weight Loss",
+        "year": 2024,
+        "image": "../images/genetics.jpg",
+        "description": "As part of an internship, I created a Python script that dynamically outputs a personalized PDF report on one's genetic traits related to weight loss given the patient's unique genetic composition."
+    },
+    {
+        "title": "Predictive Model for Restock Periods",
+        "year": 2023,
+        "image": "../images/inventory.jpg",
+        "description": "In effort to help a startup company make better data-driven decisions, I built an Excel model that predicts the restock period of 34 products. I also created an interactive Tableau dashboard that visualized their KPIs and growth trends."
+    },
+    {
+        "title": "Data Visualization for Processed vs Unproccessed Foods",
+        "year": 2025,
+        "image": "../images/foods.jpg",
+        "description": "Created a spider plot using the Ploty package in Python to compare the average macronutrient composition of processed/ultra processed foods versus unproccessed foods. Here, the maconutrient composition is composed of protein, fiber, carbohydrates, sodium, sugar, and fat."
+    },
+    {
+        "title": "Meteorite Data Analysis",
+        "year": 2023,
+        "image": "../images/meteors.jpg",
+        "description": "This project aimed to analyze the distribution of meteorites across the globe. To explore this, many analytical techniques were employed including visualizing the spread of meteorites using a global heat map to then calculating the liklihood of a sighting in every continent."
+    },
+    {
+        "title": "Market Research for the UCSD Craft Center",
+        "year": 2023,
+        "image": "../images/crafts.jpg",
+        "description": "As part of Triton Consulting Group, I collaborated with a team of 5 students to help the UCSD Craft Center with market research. We identified opportunities to create new offerings such as one-day classes and also created a blueprint for a new website to better align their digital presence with what they offer."
+    },
+    {
+        "title": "Market Research for Tech Startup",
+        "year": 2024,
+        "image": "../images/cache.jpg",
+        "description": "Working in a team of 6 students from Triton Consulting Group, we created a Python script to web scrape for public companys' info. Using this information, we then formulated strategies to group and capture companys based on size and needs for serverless caching platforms."
+    }
+]

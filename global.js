@@ -1,19 +1,5 @@
+//LAB 3
 console.log('IT’S ALIVE!');
-
-// function $$(selector, context = document) {
-//   return Array.from(context.querySelectorAll(selector));
-// }
-
-// const navLinks = $$("nav a")
-
-// let currentLink = navLinks.find(
-//     (a) => a.host === location.host && a.pathname === location.pathname,
-// );
-
-// if (currentLink) {
-//     // or if (currentLink !== undefined)
-//     currentLink?.classList.add('current');
-// }
 
 let pages = [
   { url: '/portfolio/', title: 'Home' },
@@ -82,3 +68,65 @@ select.addEventListener('input', function (event) {
   setColorScheme(value);
   console.log('color scheme changed to', value);
 });
+
+
+
+//LAB 4
+export async function fetchJSON(url) {
+  try {
+    // Fetch the JSON file from the given URL
+    const response = await fetch(url);
+    console.log(response)
+    if (!response.ok) {
+      throw new Error(`Failed to fetch projects: ${response.statusText}`);
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching or parsing JSON data:', error);
+  }
+}
+
+export function renderProjects(projects, containerElement, headingLevel = 'h2') {
+  // 1. Defensive checks
+  if (!Array.isArray(projects)) {
+    console.error('renderProjects expects an array of projects.');
+    return;
+  }
+  if (!containerElement) {
+    console.error('renderProjects needs a valid container element.');
+    return;
+  }
+
+  // 2. Clear the container first
+  containerElement.innerHTML = '';
+
+  // 3. Create a valid heading level (basic validation fallback)
+  const validHeadingLevels = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+  if (!validHeadingLevels.includes(headingLevel)) {
+    headingLevel = 'h2';
+  }
+
+  // 4. Loop through each project
+  for (const project of projects) {
+    const article = document.createElement('article');
+
+    // Optional: graceful fallback for missing project fields
+    const title = project.title || 'Untitled Project';
+    const image = project.image || '';
+    const description = project.description || '';
+
+    article.innerHTML = `
+      <${headingLevel}>${title}</${headingLevel}>
+      ${image ? `<img src="${image}" alt="${title}">` : ''}
+      <p>${description}</p>
+    `;
+
+    containerElement.appendChild(article);
+  }
+}
+
+export async function fetchGitHubData(username) {
+  return fetchJSON(`https://api.github.com/users/${username}`);
+}
+
