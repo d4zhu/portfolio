@@ -110,6 +110,7 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
   // 4. Loop through each project
   for (const project of projects) {
     const article = document.createElement('article');
+    const year = project.year || '';
 
     // Optional: graceful fallback for missing project fields
     const title = project.title || 'Untitled Project';
@@ -117,10 +118,13 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
     const description = project.description || '';
 
     article.innerHTML = `
-      <${headingLevel}>${title}</${headingLevel}>
-      ${image ? `<img src="${image}" alt="${title}">` : ''}
+    <${headingLevel}>${title}</${headingLevel}>
+    ${image ? `<img src="${image}" alt="${title}">` : ''}
+    <div class="project-text">
       <p>${description}</p>
-    `;
+      <p class="year">${year}</p>
+    </div>
+  `;
 
     containerElement.appendChild(article);
   }
