@@ -10,12 +10,11 @@ if (titleElement) {
 }
 
 let selectedIndex = -1; 
-let query = '';         
+let query = '';   
 
 renderProjects(projects, projectsContainer, 'h2');
-renderPieChart(projects); // call the pie chart on initial load
+renderPieChart(projects); 
 
-// -- Pie Chart Function --
 function renderPieChart(data) {
   let svg = d3.select('#projects-plot');
   let legend = d3.select('.legend');
@@ -23,8 +22,7 @@ function renderPieChart(data) {
   svg.selectAll('*').remove();
   legend.selectAll('*').remove();
 
-  // Always base pieData on the full dataset so the pie slices are consistent
-  let rolledData = d3.rollups(projects, v => v.length, d => d.year); // <-- changed `data` to `projects`
+  let rolledData = d3.rollups(projects, v => v.length, d => d.year);
   let pieData = rolledData.map(([year, count]) => ({
     value: count,
     label: year
@@ -56,7 +54,7 @@ function renderPieChart(data) {
       .attr('fill', colors(i))
       .attr('class', 'wedge')
       .on('click', () => {
-        selectedIndex = selectedIndex === i ? -1 : i; // toggle logic
+        selectedIndex = selectedIndex === i ? -1 : i;
 
         svg.selectAll('path')
           .attr('class', (_, idx) => idx === selectedIndex ? 'selected wedge' : 'wedge');
@@ -67,7 +65,7 @@ function renderPieChart(data) {
             idx === selectedIndex ? 'oklch(60% 45% 0)' : colors(idx)
           );
 
-        applyCombinedFilters(); // Use shared filtering function
+        applyCombinedFilters();
       });
   });
 
@@ -86,7 +84,7 @@ function applyCombinedFilters() {
   // Filter by pie chart
   if (selectedIndex !== -1) {
     const selectedYear = d3.rollups(projects, v => v.length, d => d.year)
-      .map(([year]) => year)[selectedIndex]; // consistent index
+      .map(([year]) => year)[selectedIndex]; 
     filtered = filtered.filter(p => p.year === selectedYear);
   }
 
@@ -97,13 +95,12 @@ function applyCombinedFilters() {
       return values.includes(query.toLowerCase());
     });
   }
-
   renderProjects(filtered, projectsContainer, 'h2');
 }
 
-// -- Search Handling --
+// Search Handling
 let searchInput = document.querySelector('.searchBar');
 searchInput.addEventListener('input', (event) => {
-  query = event.target.value; //  update the global query
-  applyCombinedFilters();     // Use shared filter logic 
+  query = event.target.value;
+  applyCombinedFilters();
 });
