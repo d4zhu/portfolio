@@ -6,11 +6,43 @@
     <title>Meta</title>
     <link rel="stylesheet" href="/portfolio/style.css">
 </head>
-<body>
-    <h1 style="text-align: center;">Meta</h1>
 
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis sint numquam accusantium sunt illum obcaecati nisi praesentium at, deserunt consectetur similique velit eveniet reiciendis veritatis, libero tempora commodi nemo maiores?</p>
+<body>
+    <h1 style="text-align: center; margin-bottom: 0cap;">Meta</h1>
+
+    <p style="text-align: center; font-size: 1.25rem;">If you're curious about the code behind this website, feel free to explore some of its aspects below!</p>
 
     <script type="module" src="../global.js"></script>
+    <script type="module" src="main.js"></script>
+
+    <h2 style="text-align: center; font-size: 2em; margin-top: 2em;">Summary</h2>
+    <div id="stats"></div>
+
+    <h2 style="text-align: center; font-size: 2em; margin-top: 2em;">Commits by time of day</h2>
+    <div id="chart"></div>
+
+    <section id="breakdown-section">
+        <p id="selection-count">No commits selected</p>
+        <dl id="language-breakdown" class="language-stats"></dl>
+    </section>
+
+    <dl id="commit-tooltip" class="info tooltip" hidden>
+        <dt>Commit</dt>
+        <dd>
+        <a href="" id="commit-link" target="_blank"></a>
+        </dd>
+
+        <dt>Date</dt>
+        <dd id="commit-date"></dd>
+
+        <dt>Time</dt>
+        <dd id="commit-time"></dd>
+
+        <dt>Author</dt>
+        <dd id="commit-author"></dd>
+
+        <dt>Lines</dt>
+        <dd id="commit-lines"></dd>
+    </dl>
 </body>
 </html>

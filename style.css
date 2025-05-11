@@ -250,7 +250,7 @@ button {
   font-size: 1.5em;
 }
 
-/* GitHub Styling */
+/* Profile Styling */
 #profile-stats dl {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
@@ -268,4 +268,132 @@ button {
   font-size: 125%;
   margin: 0;
   grid-row: 2; /* Place all dd's in the second row */
+}
+
+/* Github Styling */
+#github-stats {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 4 equal columns */
+  gap: 0.5rem;
+  text-align: center;
+}
+
+#github-stats dt {
+  color: gray;
+  font-size: 75%;
+  grid-row: 1; /* Place all dt's in the first row */
+}
+
+#github-stats dd {
+  font-size: 125%;
+  margin: 0;
+  grid-row: 2; /* Place all dd's in the second row */
+}
+
+/* Plot Styling */
+.gridlines line {
+  stroke: #d1d5db; /* Tailwind's gray-300 or any light gray */
+  stroke-opacity: 0.5;
+  shape-rendering: crispEdges;
+}
+
+.gridlines path {
+  display: none;
+}
+
+/* --- Tooltip style --- */
+dl.info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.25rem 1rem;
+  font-size: 0.875rem;
+  margin: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  padding: 1em;
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  z-index: 10;
+  transition-duration: 500ms;
+  transition-property: opacity, visibility;
+  pointer-events: none;
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+dl.tooltip a {
+  text-decoration: underline;
+  color: steelblue;
+}
+
+/* --- Dot hover style --- */
+circle {
+  transition: 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+circle:hover {
+  transform: scale(1.5);
+}
+
+/* ---Brush Styling--- */
+circle.selected {
+  fill: #ff6b6b;
+}
+
+.selection {
+  fill-opacity: 0.1;
+  stroke: black;
+  stroke-opacity: 0.7;
+  stroke-dasharray: 5 3;
+  animation: marching-ants 2s linear infinite;
+}
+
+@keyframes marching-ants {
+  to {
+    stroke-dashoffset: -8;
+  }
+}
+
+#breakdown-section {
+  margin-top: 1.5rem;
+  max-width: 400px;
+  font-family: system-ui, sans-serif;
+}
+
+#selection-count {
+  font-weight: bold;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.language-stats {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 0.5rem 2rem;
+  align-items: center;
+  font-size: 0.95rem;
+  background: #fafafa;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.language-stats dt {
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #4b5563; /* gray-700 */
+}
+
+.language-stats dd {
+  margin: 0;
+  font-weight: 400;
+  color: #111827; /* gray-900 */
 }
