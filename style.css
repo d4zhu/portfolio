@@ -397,3 +397,111 @@ circle.selected {
   font-weight: 400;
   color: #111827; /* gray-900 */
 }
+
+.slider-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 1em;
+  margin: 2em 0 1em;
+}
+
+.slider-container label {
+  white-space: nowrap;
+  margin-top: 6px;
+}
+
+.slider-wrapper {
+  flex-grow: 1;
+}
+
+.slider-wrapper input[type="range"] {
+  width: 100%;
+}
+
+.slider-time {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.3em;
+}
+
+#files {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 0.5em;
+}
+
+#files > div {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+  align-items: start;
+}
+
+#files dt {
+  grid-column: 1;
+  margin: 0;
+}
+
+#files dd {
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  align-content: start;
+  gap: 0.15em;
+  padding-top: 0.6em;
+  margin-left: 0;
+  margin-top: 0;
+}
+
+.loc {
+  display: flex;
+  width: 0.5em;
+  aspect-ratio: 1;
+  background: var(--color, steelblue);
+  border-radius: 50%;
+}
+
+#scrolly-1 {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+}
+
+#scrolly-1 > * {
+  flex: 1;
+}
+
+#scatter-story {
+  position: relative;
+}
+
+#scatter-plot {
+  position: sticky;
+  top: 0;
+  left: 0;
+  bottom: auto;
+  height: 50vh;
+}
+
+#scrolly-2 {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  margin-top: 14em;
+}
+
+#scrolly-2 > * {
+  flex: 1;
+}
+
+#files-story {
+  position: relative;
+}
+
+#files-viz {
+  position: sticky;
+  top: 0;
+  height: 50vh;
+  overflow-y: visible;
+}

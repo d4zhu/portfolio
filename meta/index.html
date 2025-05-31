@@ -1,48 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meta</title>
-    <link rel="stylesheet" href="/portfolio/style.css">
-</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meta</title>
+  <link rel="stylesheet" href="/portfolio/style.css">
+  <script type="module" src="../global.js"></script>
+  <script type="module" src="main.js"></script>
+</head> 
 
 <body>
-    <h1 style="text-align: center; margin-bottom: 0cap;">Meta</h1>
+  <h1 style="text-align: center; margin-bottom: 0cap;">Meta</h1>
+  <p style="text-align: center; font-size: 1.25rem;">
+    If you're curious about the code behind this website, feel free to explore some of its aspects below!
+  </p>
 
-    <p style="text-align: center; font-size: 1.25rem;">If you're curious about the code behind this website, feel free to explore some of its aspects below!</p>
+  <h2 style="text-align: center; font-size: 2em; margin-top: 2em;">Summary</h2>
+  <div id="stats"></div>
 
-    <script type="module" src="../global.js"></script>
-    <script type="module" src="main.js"></script>
+  <div id="time-filter" class="slider-container">
+    <label for="commit-progress">Show commits until:</label>
+    <div class="slider-wrapper">
+      <input type="range" id="commit-progress" min="0" max="100" value="100">
+      <div class="slider-time">
+        <time id="commit-time">Date and Time</time>
+      </div>
+    </div>
+  </div>
 
-    <h2 style="text-align: center; font-size: 2em; margin-top: 2em;">Summary</h2>
-    <div id="stats"></div>
+  <!-- Begin Scrollytelling Layout -->
+  <div id="scrolly-1">
+    <div id="scatter-story">
+    </div>
 
-    <h2 style="text-align: center; font-size: 2em; margin-top: 2em;">Commits by time of day</h2>
-    <div id="chart"></div>
+    <div id="scatter-plot">
+        <h2 style="text-align: center; font-size: 1.75em; margin-bottom: 0.5em;">
+            Commits by Time of Day
+        </h2>
+      <div id="chart"></div>
 
-    <section id="breakdown-section">
+      <section id="breakdown-section">
         <p id="selection-count">No commits selected</p>
         <dl id="language-breakdown" class="language-stats"></dl>
-    </section>
+      </section>
+    </div>
+  </div>
+  <!-- End Scrollytelling Layout -->
 
-    <dl id="commit-tooltip" class="info tooltip" hidden>
-        <dt>Commit</dt>
-        <dd>
-        <a href="" id="commit-link" target="_blank"></a>
-        </dd>
+    <div id="scrolly-2">
+        <div id="files-story"></div>
+        <div id="files-viz">
+            <h2 style="text-align: center; font-size: 1.75em; margin-bottom: 0.5em;">
+                File Size Breakdown
+            </h2>
+            <dl id="files"></dl>
+        </div>
+    </div>
 
-        <dt>Date</dt>
-        <dd id="commit-date"></dd>
+  <dl id="commit-tooltip" class="info tooltip" hidden>
+    <dt>Commit</dt>
+    <dd><a href="" id="commit-link" target="_blank"></a></dd>
 
-        <dt>Time</dt>
-        <dd id="commit-time"></dd>
+    <dt>Date</dt>
+    <dd id="commit-date"></dd>
 
-        <dt>Author</dt>
-        <dd id="commit-author"></dd>
+    <dt>Time</dt>
+    <dd id="commit-time"></dd>
 
-        <dt>Lines</dt>
-        <dd id="commit-lines"></dd>
-    </dl>
+    <dt>Author</dt>
+    <dd id="commit-author"></dd>
+
+    <dt>Lines</dt>
+    <dd id="commit-lines"></dd>
+  </dl>
 </body>
 </html>
