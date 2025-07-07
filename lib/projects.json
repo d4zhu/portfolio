@@ -39,7 +39,7 @@
         "title": "Personalized Genetic Report for Weight Loss",
         "year": 2024,
         "image": "../images/genetics.jpg",
-        "description": "As part of an internship, I created a Python script that dynamically outputs a personalized PDF report on one's genetic traits related to weight loss given the patient's unique genetic composition."
+        "description": "As part of my most recent internship, I create a pipeline in AWS to dynamically generate personalized genetic reports for weight loss. This leveraged the capabilities of AWS Lambda, S3, and RDS to create a scalable solution that can handle large datasets stored in PostgreSQL."
     },
     {
         "title": "Flight Fare Forecasting",
