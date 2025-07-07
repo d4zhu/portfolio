@@ -6,7 +6,7 @@ const projectsContainer = document.querySelector('.projects');
 
 const titleElement = document.querySelector('.projects-title');
 if (titleElement) {
-  titleElement.textContent = `${projects.length} Projects`;
+  titleElement.textContent = `Projects`;
 }
 
 let selectedIndex = -1; 

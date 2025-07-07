@@ -12,6 +12,12 @@
         "description": "Placed top 25 out of 100+ participants in a Kaggle competition where the objective was to build the best machine learning model to predict AirBnb listing prices."
     },
     {
+        "title": "Interative Bike Map of Boston and Cambridge",
+        "year": 2025,
+        "image": "../images/bikes.png",
+        "description": "This is an interactive map that visualizes the bike paths in Boston and Cambridge, Massachusetts. Users can explore the vast network of BlueBike stations and also see how traffic congestion varies throughout the day"
+    },
+    {
         "title": "LinkedIn Salary Prediction",
         "year": 2025,
         "image": "../images/LinkedIn.jpg",
@@ -40,12 +46,6 @@
         "year": 2024,
         "image": "../images/airplane.jpg",
         "description": "Are we able to accurately predict flight costs based on the route, distance, and seasonality? To carry this out, a Random Forest Regressor was employed that ultimately achieved a R-squared of 0.93 and a ~5.1% mean absolute pecentage error."
-    },
-    {
-        "title": "Image Processor",
-        "year": 2023,
-        "image": "../images/photo_edit.jpg",
-        "description": "This project focused on constructing a simulated photo editting application using Python. Features such as birghtness adjustment, blurring, blending, and edge highlighting were implemented. Also developed a feature that classifies an image as day or night with a KNN Classifier. "
     },
     {
         "title": "Predictive Model for Restock Periods",
